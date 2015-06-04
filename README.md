@@ -6,6 +6,14 @@ a built docker container as the output.
 
 
 ####Usage
+After building the docker image with a command like:
+
+```
+docker build --rm=true -t your-registry/ci-builder:latest .
+```
+
+You then use the following sinppet (or similar) in your Jenkins (or the like) CI project build step.
+
 Simply set the `REGISTRY_HOST` variable and execute the following code in your Jenkins build.
 
 ```
