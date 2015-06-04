@@ -13,7 +13,7 @@ docker pull ${DOCKER_REG_PREFIX}/your-app:latest
 # cd and cont.
 cd /builder/docker/your-app
 if [ "${DOCKER_BASE_IMG}" != "" ] ; then
-  sed -i "s/.*FROM .*/FROM ${DOCKER_BASE_IMG}/" ./Dockerfile
+  sed -i "s;.*FROM .*;FROM ${DOCKER_BASE_IMG};" ./Dockerfile
 fi
 
 # BUild the new app server
