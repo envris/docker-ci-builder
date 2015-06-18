@@ -23,7 +23,7 @@ LATEST_IMG=`docker images | grep "app/your-app" | grep "latest" | awk '{print $3
 
 if [ "${LATEST_IMG}" != "" ] ; then
   docker tag app/your-app:latest ${DOCKER_REG_PREFIX}/your-app:${DOCKER_BUILD_TAG}
-  docker tag app/your-app:latest ${DOCKER_REG_PREFIX}/your-app:latest
+  docker tag -f app/your-app:latest ${DOCKER_REG_PREFIX}/your-app:latest
   docker push ${DOCKER_REG_PREFIX}/your-app:${DOCKER_BUILD_TAG}
   docker push ${DOCKER_REG_PREFIX}/your-app:latest
 fi
