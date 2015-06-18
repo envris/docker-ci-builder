@@ -22,7 +22,7 @@ REGISTRY_HOST=""
 docker pull ${REGISTRY_HOST}/ci-builder:latest
 PCWD=`pwd`
 docker run --rm -t --privileged -v ${PCWD}:/builder -e DOCKER_REG_PREFIX=${REGISTRY_HOST} \
-  -e DOCKER_BUILDER_OPTS="--dns x.x.x.x" -e DOCKER_BUILD_TAG="${GIT_COMMIT}_${BUILD_NUMBER}" \
+  -e DOCKER_BUILDER_OPTS="--dns x.x.x.x" -e GIT_COMMIT="${GIT_COMMIT}" -e BUILD_NUMBER="${BUILD_NUMBER}" \
   [-e DOCKER_BASE_IMG=""] ${REGISTRY_HOST}/ci-builder:latest /builder/ci-builder/jenkins-build.sh
 ```
 
