@@ -14,4 +14,4 @@ RUN apt-get update && apt-get install -y lxc-docker
 
 RUN rm -f /etc/default/docker
 
-CMD ["/bin/bash /builder/ci-builder/jenkins-build.sh"]
+CMD ["/builder/ci-builder/jenkins-build.sh"]
