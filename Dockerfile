@@ -1,4 +1,4 @@
-FROM ubuntu:utopic
+FROM ubuntu:vivid
 MAINTAINER Aaron Nicoli <aaronnicoli@gmail.com>
 
 
